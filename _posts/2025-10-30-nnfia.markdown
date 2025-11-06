@@ -2,7 +2,7 @@
 layout: post
 title:  "Recent Computational Advances in Closure Modeling for Reconstruction of Supersonic Combustion Flow Field in Scramjet Combustor with Neural Network: A Systematic Review"
 date:   2025-10-30
-categories: research
+categories: under
 author: "Tahsin Hossain"
 authors: "<strong>Tahsin Hossain</strong>, Fahim Islam Anik, Md. Ashraful Islam, Md. Helal-An-Nahiyan"
 venue: "Heliyon"
