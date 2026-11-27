@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Numerical Analysis of Thermo-Mechanically Loaded FGM Cylindrical Tube under Internal Shock Loading"
+date:   2026-01-01
+categories: conference
+author: "Tahsin Hossain"
+authors: "M. Z. Rahman, <strong>T. Hossain*</strong>, M. A. Islam"
+venue: "AIAA Region VII Student Paper Conference"
+---
