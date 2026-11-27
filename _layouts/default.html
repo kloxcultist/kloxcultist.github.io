@@ -92,72 +92,9 @@
           {% endfor %}
           {% endfor %}
         </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Under Peer Review</h2>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'under' %}
-          <tr>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              {{post.authors}}
-
-              <br>
-              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
-              <br>
-              {% comment %}--- Create a 'memory' variable to track links ---{% endcomment %}
-              {% assign has_links = false %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">[Paper]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.video %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.video}}">[Video]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.code %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.code}}">[Code]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.poster %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.poster}}">[Poster]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.slides %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.slides}}">[Slides]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.website %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.website}}">[Website]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.youtube %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.youtube}}">[Youtube]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h2>Journal Publications</h2>
@@ -165,7 +102,6 @@
           </tr>
         </table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
           {% for post in site.posts %}
           {% for cat in post.categories %}
           {% if cat == 'journal' %}
@@ -174,46 +110,17 @@
               <h3>{{post.title}}</h3>
               <br>
               {{post.authors}}
-
               <br>
               <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
               <br>
-              {% comment %}--- Create a 'memory' variable to track links ---{% endcomment %}
               {% assign has_links = false %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">[Paper]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.video %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.video}}">[Video]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.code %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.code}}">[Code]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.poster %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.poster}}">[Poster]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.slides %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.slides}}">[Slides]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.website %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.website}}">[Website]</a>
-              {% assign has_links = true %}
-              {% endif %}
-              {% if post.youtube %}
-              {% if has_links %}, {% endif %}
-              <a href="{{post.youtube}}">[Youtube]</a>
-              {% assign has_links = true %}
-              {% endif %}
+              {% if post.paper %}<a href="{{post.paper}}">[Paper]</a>{% assign has_links = true %}{% endif %}
+              {% if post.video %}{% if has_links %}, {% endif %}<a href="{{post.video}}">[Video]</a>{% assign has_links = true %}{% endif %}
+              {% if post.code %}{% if has_links %}, {% endif %}<a href="{{post.code}}">[Code]</a>{% assign has_links = true %}{% endif %}
+              {% if post.poster %}{% if has_links %}, {% endif %}<a href="{{post.poster}}">[Poster]</a>{% assign has_links = true %}{% endif %}
+              {% if post.slides %}{% if has_links %}, {% endif %}<a href="{{post.slides}}">[Slides]</a>{% assign has_links = true %}{% endif %}
+              {% if post.website %}{% if has_links %}, {% endif %}<a href="{{post.website}}">[Website]</a>{% assign has_links = true %}{% endif %}
+              {% if post.youtube %}{% if has_links %}, {% endif %}<a href="{{post.youtube}}">[Youtube]</a>{% assign has_links = true %}{% endif %}
               <p></p>
               {{ post.excerpt }}
             </td>
@@ -222,6 +129,80 @@
           {% endfor %}
           {% endfor %}
         </table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2>Conference Publications</h2>
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'conference' %}
+          <tr>
+            <td style="padding:2.5%;width:75%;vertical-align:middle">
+              <h3>{{post.title}}</h3>
+              <br>
+              {{post.authors}}
+              <br>
+              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
+              <br>
+              {% assign has_links = false %}
+              {% if post.paper %}<a href="{{post.paper}}">[Paper]</a>{% assign has_links = true %}{% endif %}
+              {% if post.video %}{% if has_links %}, {% endif %}<a href="{{post.video}}">[Video]</a>{% assign has_links = true %}{% endif %}
+              {% if post.code %}{% if has_links %}, {% endif %}<a href="{{post.code}}">[Code]</a>{% assign has_links = true %}{% endif %}
+              {% if post.poster %}{% if has_links %}, {% endif %}<a href="{{post.poster}}">[Poster]</a>{% assign has_links = true %}{% endif %}
+              {% if post.slides %}{% if has_links %}, {% endif %}<a href="{{post.slides}}">[Slides]</a>{% assign has_links = true %}{% endif %}
+              {% if post.website %}{% if has_links %}, {% endif %}<a href="{{post.website}}">[Website]</a>{% assign has_links = true %}{% endif %}
+              {% if post.youtube %}{% if has_links %}, {% endif %}<a href="{{post.youtube}}">[Youtube]</a>{% assign has_links = true %}{% endif %}
+              <p></p>
+              {{ post.excerpt }}
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2>Under Peer Review</h2>
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'under' %}
+          <tr>
+            <td style="padding:2.5%;width:75%;vertical-align:middle">
+              <h3>{{post.title}}</h3>
+              <br>
+              {{post.authors}}
+              <br>
+              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
+              <br>
+              {% assign has_links = false %}
+              {% if post.paper %}<a href="{{post.paper}}">[Paper]</a>{% assign has_links = true %}{% endif %}
+              {% if post.video %}{% if has_links %}, {% endif %}<a href="{{post.video}}">[Video]</a>{% assign has_links = true %}{% endif %}
+              {% if post.code %}{% if has_links %}, {% endif %}<a href="{{post.code}}">[Code]</a>{% assign has_links = true %}{% endif %}
+              {% if post.poster %}{% if has_links %}, {% endif %}<a href="{{post.poster}}">[Poster]</a>{% assign has_links = true %}{% endif %}
+              {% if post.slides %}{% if has_links %}, {% endif %}<a href="{{post.slides}}">[Slides]</a>{% assign has_links = true %}{% endif %}
+              {% if post.website %}{% if has_links %}, {% endif %}<a href="{{post.website}}">[Website]</a>{% assign has_links = true %}{% endif %}
+              {% if post.youtube %}{% if has_links %}, {% endif %}<a href="{{post.youtube}}">[Youtube]</a>{% assign has_links = true %}{% endif %}
+              <p></p>
+              {{ post.excerpt }}
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
+
+        
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
